@@ -4,7 +4,7 @@
 ## [Interactive Time-lapse: Russia's War in Ukraine](https://storymaps.arcgis.com/stories/733fe90805894bfc8562d90b106aa895)
 
 |Year|Month|
-|---|---|
+|:---|:---|
 |2022|[February and March](https://experience.arcgis.com/experience/c5eeec0f7ce5469ab6fc70176327fb0e/)|
 |2022|[April](https://experience.arcgis.com/experience/470f2b16c86943a288e62a6ec8ab3ca3/)|
 |2022|[May](https://experience.arcgis.com/experience/8402ca9a9979465493cb10613b4a80f9/)|
