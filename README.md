@@ -1,5 +1,15 @@
-# ISW
+# Institute for the Study of War
+
 ## [Interactive Map: Russia's Invasion of Ukraine](https://storymaps.arcgis.com/stories/36a7f6a6f5a9448496de641cf64bd375)
+
+|[Layers](https://www.arcgis.com/sharing/rest/content/items/9f04944a2fe84edab9da31750c2b15eb/data?f=json)|
+|:---|
+|[Russian Controlled Ukrainian Territory before February 24, 2022](https://services5.arcgis.com/SaBe5HMtmnbqSWlu/arcgis/rest/services/VIEW_Russian_controlled_Ukrainian_Territory_before_February_24_2022/FeatureServer/36/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCount=8000&where=1%3D1&orderByFields=OBJECTID&outFields=*&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=102100)|
+|[Russian Control of Terrain in Ukraine](https://services5.arcgis.com/SaBe5HMtmnbqSWlu/arcgis/rest/services/VIEW_RussiaCoTinUkraine_V3/FeatureServer/49/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCount=8000&where=1%3D1&orderByFields=OBJECTID&outFields=OBJECTID&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=102100)|
+|[Assessed Russian Advances in Ukraine](https://services5.arcgis.com/SaBe5HMtmnbqSWlu/arcgis/rest/services/MDS_AssessedRussianAdvanceInUkraine_view/FeatureServer/49/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCount=8000&where=1%3D1&orderByFields=OBJECTID&outFields=OBJECTID&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=102100)|
+|[Claimed Russian Territory in Ukraine](https://services5.arcgis.com/SaBe5HMtmnbqSWlu/arcgis/rest/services/VIEW_ClaimedRussianTerritoryinUkraine_V2/FeatureServer/49/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCount=8000&where=1%3D1&orderByFields=OBJECTID&outFields=OBJECTID&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=102100)|
+|[Claimed Ukrainian Counteroffensives](https://services5.arcgis.com/SaBe5HMtmnbqSWlu/arcgis/rest/services/VIEW_ClaimedUkrainianCounteroffensives_V2/FeatureServer/51/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCount=8000&where=1%3D1&orderByFields=OBJECTID&outFields=OBJECTID&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=102100)|
+|[Reported Ukrainian Partisan Warfare](https://services5.arcgis.com/SaBe5HMtmnbqSWlu/arcgis/rest/services/VIEW_Reported_Ukrainian_Partisan_Warfare_V2/FeatureServer/53/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCount=8000&where=1%3D1&orderByFields=OBJECTID&outFields=OBJECTID&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=102100)|
 
 ## [Interactive Time-lapse: Russia's War in Ukraine](https://storymaps.arcgis.com/stories/733fe90805894bfc8562d90b106aa895)
 
