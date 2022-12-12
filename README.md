@@ -14,5 +14,5 @@
 |2022|[September](https://experience.arcgis.com/experience/6314230485b64d71b3b9ef65192a205c)|
 |2022|[October](https://experience.arcgis.com/experience/551426ba370c4273a3ec2cbef273ae51/)|
 |2022|[November](https://experience.arcgis.com/experience/76a5f43c604543e1b0882da23a8d6ab1)|
-|2022|Decenmer|
+|2022|December|
 |2023|January|
