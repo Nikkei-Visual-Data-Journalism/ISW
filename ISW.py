@@ -38,15 +38,15 @@ query = '/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCoun
 layers = layers[~layers.title.isin(
     ['Russian-controlled before February 24, 2022','Reported Ukrainian Partisan Warfare'])].reset_index(drop=True)
 
-export = gpd.GeoDataFrame()
+export = pd.DataFrame()
 for i in range(len(layers)):
     data = requests.get(layers.url[i]+query).json()
     json_string = json.dumps(data)
     gdf = gpd.read_file(json_string)
     gdf['layer'] = layers.title[i]
-    export = export.append(gdf.dissolve(by='layer'))
+    export = pd.concat([export,gdf.dissolve(by='layer')])
 
-export = export.drop(['OBJECTID'],axis=1)
+export = gpd.GeoDataFrame(export).drop(['OBJECTID'],axis=1)
 
 export.index = export.index.map(
     {'Assess Russian Control':'ロシア軍支配エリア',
