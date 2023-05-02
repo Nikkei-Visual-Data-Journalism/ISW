@@ -38,22 +38,26 @@ query = '/query?f=geoJSON&maxRecordCountFactor=4&resultOffset=0&resultRecordCoun
 layers = layers[~layers.title.isin(
     ['Russian-controlled before February 24, 2022','Reported Ukrainian Partisan Warfare'])].reset_index(drop=True)
 
-export = pd.DataFrame()
+geojson = pd.DataFrame()
 for i in range(len(layers)):
     data = requests.get(layers.url[i]+query).json()
     json_string = json.dumps(data)
     gdf = gpd.read_file(json_string)
     gdf['layer'] = layers.title[i]
-    export = pd.concat([export,gdf.dissolve(by='layer')])
+    geojson = pd.concat([geojson,gdf])
 
-export = gpd.GeoDataFrame(export).drop(['OBJECTID'],axis=1)
-
-export.index = export.index.map(
+geojson.layer = geojson.layer.map(
     {'Assess Russian Control':'ロシア軍支配エリア',
      'Claimed Ukrainian Counteroffensives':'ウクライナ軍反撃エリア',
      'Claimed Russian Territory in Ukraine':'ロシア軍侵攻エリア',
      'Assessed Russian Advance':'ロシア軍侵攻エリア'})
 
-export.to_file('Ukraine.geojson')
+ukraine = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/raw/main/Ukraine.geojson')
 
-export.to_file('data/'+(datetime.today() - timedelta(days=1)).strftime(format='%Y%m%d')+'.geojson')
+geojson = pd.concat([ukraine,geojson.drop(['OBJECTID'],axis=1)],ignore_index=True)
+
+geojson = gpd.GeoDataFrame(geojson)
+
+geojson.reindex(['geometry','layer'],axis=1).to_file('ISW.geojson',index=False)
+
+geojson.to_file('data/'+(datetime.today() - timedelta(days=1)).strftime(format='%Y%m%d')+'.geojson',index=False)
