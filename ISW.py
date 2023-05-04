@@ -58,7 +58,7 @@ geojson.to_file('data/'+(datetime.today() - timedelta(days=1)).strftime(format='
 
 ukraine = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/raw/main/Ukraine.geojson')
 
-geojson = pd.concat([ukraine,geojson,axis=1)],ignore_index=True)
+geojson = pd.concat([ukraine,geojson],ignore_index=True)
 
 geojson.reindex(['geometry','layer'],axis=1).to_file('ISW.geojson',index=False)
 
