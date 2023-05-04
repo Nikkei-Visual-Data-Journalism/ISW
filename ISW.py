@@ -56,12 +56,6 @@ geojson = geojson.drop(['OBJECTID'],axis=1)
 
 geojson.to_file('data/'+(datetime.today() - timedelta(days=1)).strftime(format='%Y%m%d')+'.geojson',index=False)
 
-ukraine = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/raw/main/Ukraine.geojson')
-
-geojson = pd.concat([ukraine,geojson],ignore_index=True)
-
-geojson.reindex(['geometry','layer'],axis=1).to_file('ISW.geojson',index=False)
-
 countries = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/raw/main/map.geojson')
 
 dissolved = geojson.dissolve(by='layer').reset_index()
@@ -69,3 +63,9 @@ dissolved = geojson.dissolve(by='layer').reset_index()
 dissolved = pd.concat([countries,dissolved],ignore_index=True)
 
 dissolved.reindex(['geometry','layer'],axis=1).to_file('dissolved.geojson',index=False)
+
+ukraine = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/raw/main/Ukraine.geojson')
+
+geojson = pd.concat([ukraine,geojson],ignore_index=True)
+
+geojson.reindex(['geometry','layer'],axis=1).to_file('ISW.geojson',index=False)
