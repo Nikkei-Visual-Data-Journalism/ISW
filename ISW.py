@@ -80,4 +80,4 @@ isw.layer = isw.layer.apply(lambda x: x['layer'])
 isw.geometry = isw.geometry.apply(lambda x: str(x).replace("'", '"'))
 isw.geometry = isw.geometry.apply(lambda x: '' if x=='None' else '')
 
-isw.to_csv('ISW.csv', encoding='utf_8_sig', index=False)
+isw.to_csv('ISW.csv', index=False)
