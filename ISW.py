@@ -69,3 +69,15 @@ ukraine = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/ra
 geojson = pd.concat([ukraine,geojson],ignore_index=True)
 
 geojson.reindex(['geometry','layer'],axis=1).to_file('ISW.geojson',index=False)
+
+data = json.loads(open('ISW.geojson').read())
+
+isw = pd.DataFrame(data['features'])
+isw = isw[['geometry', 'properties']]
+isw = isw.rename(columns={'properties': 'layer'})
+isw.layer = isw.layer.apply(lambda x: x['layer'])
+
+isw.geometry = isw.geometry.apply(lambda x: str(x).replace("'", '"'))
+isw.geometry = isw.geometry.apply(lambda x: '' if x=='None' else '')
+
+isw.to_csv('ISW.csv', encoding='utf_8_sig', index=False)
