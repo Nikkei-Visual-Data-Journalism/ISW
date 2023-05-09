@@ -64,6 +64,18 @@ dissolved = pd.concat([countries,dissolved],ignore_index=True)
 
 dissolved.reindex(['geometry','layer'],axis=1).to_file('dissolved.geojson',index=False)
 
+data = json.loads(open('dissolved.geojson').read())
+
+isw = pd.DataFrame(data['features'])
+isw = isw[['geometry', 'properties']]
+isw = isw.rename(columns={'properties': 'layer'})
+isw.layer = isw.layer.apply(lambda x: x['layer'])
+
+isw.geometry = isw.geometry.apply(lambda x: str(x).replace("'", '"'))
+#isw.geometry = isw.geometry.apply(lambda x: '' if x=='None' else '')
+
+isw.to_csv('dissolved.csv', index=False)
+
 ukraine = gpd.read_file('https://github.com/Nikkei-Visual-Data-Journalism/ISW/raw/main/Ukraine.geojson')
 
 geojson = pd.concat([ukraine,geojson],ignore_index=True)
